@@ -1,48 +1,60 @@
-import axios from 'axios'
+import axios from "axios";
 import {
-    ADD_TODO,
-    GET_TODOS,
-    LOAD_TODOS,
-    DELETE_TODO,
-    COMPLETE_TODO
-} from './constants'
+  ADD_TODO,
+  GET_TODOS,
+  LOAD_TODOS,
+  DELETE_TODO,
+  COMPLETE_TODO
+} from "./constants";
 
-axios.defaults.baseURL = 'http://localhost:5000/api'
+axios.defaults.baseURL = "http://localhost:5000/api";
 
-export const getTodos = () => (dispatch) => {
-    dispatch({ type: LOAD_TODOS })
-    
-    axios.get('/todos')
-        .then(res => dispatch({
-            type: GET_TODOS,
-            payload: res.data
-        }))
-        .catch(err => console.log(err))
-}
+export const getTodos = () => dispatch => {
+  dispatch({ type: LOAD_TODOS });
 
-export const addTodo = (text) => (dispatch) => {
-    axios.post('/todos', { text: text })
-        .then(res => dispatch({
-            type: ADD_TODO,
-            payload: res.data
-        }))
-        .catch(error => console.log(error))
-}
+  axios
+    .get("/todos")
+    .then(res =>
+      dispatch({
+        type: GET_TODOS,
+        payload: res.data
+      })
+    )
+    .catch(err => console.log(err));
+};
 
-export const deleteTodo = (todoId) => dispatch => {
-    axios.post(`/todos/${todoId}`)
-    .then(res => dispatch({
+export const addTodo = text => dispatch => {
+  axios
+    .post("/todos", { text: text })
+    .then(res =>
+      dispatch({
+        type: ADD_TODO,
+        payload: res.data
+      })
+    )
+    .catch(error => console.log(error));
+};
+
+export const deleteTodo = todoId => dispatch => {
+  axios
+    .delete(`/todos/${todoId}`)
+    .then(res =>
+      dispatch({
         type: DELETE_TODO,
         payload: res.data.todoId
-    }))
-    .catch(error => console.log(error))
-}
+      })
+    )
+    .catch(error => console.log(error));
+};
 
-export const completeTodo = (todoId) => dispatch => {
-    axios.post(`/todos/${todoId}/complete`)
-    .then(res => dispatch({
+export const completeTodo = todoId => dispatch => {
+  axios
+    .put(`/todos/${todoId}/complete`)
+    .then(res =>
+      dispatch({
         type: COMPLETE_TODO,
         payload: res.data.todoId
-    }))
-    .catch (error => console.log(error))
-}
+      })
+    )
+    .catch(error => console.log(error));
+};
