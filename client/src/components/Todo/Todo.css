@@ -1,0 +1,14 @@
+/* Style the close button */
+.close.btn.btn-danger {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  padding: 0.5rem;
+  margin-right: 3%;
+  height: fit-content;
+}
+
+.close:hover {
+  background-color: #dc343e;
+  color: white;
+}
