@@ -4,7 +4,7 @@ import AddTodo from "./components/AddTodo/AddTodo";
 import ListTodos from "./components/ListToDos/ListTodos";
 import { Provider } from "react-redux";
 
-import store from "./store";
+import store from "./Store/store";
 
 class App extends Component {
   render() {

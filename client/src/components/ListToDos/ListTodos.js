@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getTodos } from "../../actions";
+import { getTodos } from "../../Actions/actions";
 import Todo from "../Todo/Todo";
 
 class ListTodos extends React.Component {
