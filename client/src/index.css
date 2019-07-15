@@ -84,3 +84,16 @@ input {
   float: left;
   font-size: 16px;
 }
+.header {
+  background-color: #dc343e;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
