@@ -19,5 +19,9 @@ app.use(cors());
 // routes
 app.use("/api/todos", todoRoutes);
 
+// make port constant to dynamically bind based on heroku port assignment or port 5000 on local
+const PORT = process.env.PORT || 5000;
 // run server
-app.listen(5000, () => console.log("Server is running on port 5000"));
+// app.listen(PORT);
+
+app.listen(PORT, () => console.log("Server is running on port 5000"));
