@@ -34,13 +34,9 @@ Run the app :
 
 <ol>
 <li>Set up MongoDB</li>
-<li>Start the server</li>
+<li>Start the server and client concurrently</li>
 <pre><code>$ cd server
-$ npm start
-</code></pre>
-<li>Start the client</li>
-<pre><code>$ cd client
-$ npm start
+$ npm run dev
 </code></pre>
 <li>Navigate to http://localhost:3000/</li>
 <br/>
