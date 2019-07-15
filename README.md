@@ -43,4 +43,13 @@ $ npm start
 $ npm start
 </code></pre>
 <li>Navigate to http://localhost:3000/</li>
+<br/>
+<li>Test backend with Mocha/Supertest</li>
+<pre><code>$ cd server
+mocha
+</code></pre>
+<li>Test front end with Jest/Enzyme</li>
+<pre><code>$ cd client
+npm test
+</code></pre>
 </ol>
